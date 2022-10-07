@@ -10,6 +10,6 @@
 
 Note: client will fail since openseach will take a while to be ready.
 
-In a different terminal run the opensearch terminal
+In a different terminal run the opensearch client
 
 `docker-compose start opensearch-client`
