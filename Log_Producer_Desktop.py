@@ -193,6 +193,8 @@ def dev():
 # End local logs
 
 
+# TODO add function to poll opensearch until it is ready
+
 if os.environ.get('ENV') == "dev":
 	# run ecs example
 	ecs()
