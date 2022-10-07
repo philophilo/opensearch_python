@@ -82,8 +82,8 @@ services:
     image: philophilo/opensearch_python:v2
     container_name: opensearch-client
     environment:
-      - ACCESS_KEY=AKIATD5YVXYA425DFE4W
-      - SECRET_ACCESS_KEY=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
+      - ACCESS_KEY=AKIATD5YVXYA425DFE4Wout
+      - SECRET_ACCESS_KEY=gP5MANZHVltsKN8OcXLrR8wZDTkWK3hzQFbRRAzzout
       - REGION=us-east-1
       - env=local
       - HOST=vpc-test-domain-54xhw2nhpw3gi2ffue7qf6vbom.us-east-1.es.amazonaws.com
