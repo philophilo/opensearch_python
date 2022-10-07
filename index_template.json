@@ -1,0 +1,19 @@
+{
+    "index_patterns": [
+      "opster-*",
+      "elastic-*"
+    ],
+    "mappings": {
+      "properties": {
+        "id": {
+          "type": "keyword"
+        },
+        "location": {
+          "type": "geo_point"
+        },
+        "movie": {
+          "type": "text"
+        }
+      }
+    }
+   }
