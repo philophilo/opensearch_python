@@ -1,0 +1,17 @@
+version: '3'
+services:
+  certs:
+    image: alpine:3.16.2
+    container_name: opensearch-certs
+    command: >
+      /bin/sh -c '
+        apk add openssl;
+        mkdir -p /certs;
+        cd /certs
+        ls | grep -xv "script.sh" | xargs rm
+        . /certs/script.sh
+      '
+    volumes:
+      - ${PWD}/certs:/certs
+    networks:
+      - opensearch-net
