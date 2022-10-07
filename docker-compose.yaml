@@ -77,6 +77,7 @@ services:
     networks:
       - opensearch-net
 
+# TODO make keys inactive
   opensearch-client:
     image: philophilo/opensearch_python:v2
     container_name: opensearch-client
