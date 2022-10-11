@@ -1,2 +1,3 @@
 certs/*.pem
 certs/*.srl
+*__pycache__
