@@ -21,9 +21,6 @@ ALIAS = ["movies"]
 INDEX = ["great-movies-add-*"]
 INDEX_NAME = "great-movies-add-1"
 INDEX_DELETE = True
-INDEX_BODY = {
-	
-}
 ALIAS_UPDATE = True
 ALIAS_DELETE = True
 ALIAS_BODY = {
@@ -70,6 +67,8 @@ client = create_client()
 print("===>>>", client)
 
 def index():
+	with open("./movies_index.json", "r") as read_file:
+ 		data = json.load(read_file)
 	index = Index(client, INDEX_NAME)
 	index_exists = index.check()
 
@@ -86,24 +85,23 @@ def index():
 		print(response, "*******", index.check())
 	
 
+def alias_setup():
+	alias = Alias(client, ALIAS, INDEX)
+	alias_exists = alias.check_alias()
 
-index()
-# def alias_setup():
-# 	alias = Alias(client, ALIAS, INDEX)
-# 	alias_exists = alias.check_alias()
+	response = alias.update_alias(body=ALIAS_BODY)
+	print(response, "****", alias.get_alias())
 
-# 	response = alias.update_alias(body=ALIAS_BODY)
-# 	print(response, "****", alias.get_alias())
-
-# 	response = alias.create_alias()
-# 	print("....", response['acknowledged'])
+	response = alias.create_alias()
+	print("....", response['acknowledged'])
 	
-# 	if ALIAS_UPDATE:
-# 		response = alias.update_alias(body=ALIAS_BODY)
-# 		print(response, "----", alias.get_alias())
+	if ALIAS_UPDATE:
+		response = alias.update_alias(body=ALIAS_BODY)
+		print(response, "----", alias.get_alias())
 		
 
-# alias_setup()
+alias_setup()
+index()
 
 # # start ECS function
 # def ecs():

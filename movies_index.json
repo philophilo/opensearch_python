@@ -1,0 +1,37 @@
+{
+    "settings": {
+        "number_of_shards": 2,
+        "number_of_replicas": 2
+    },
+    "mappings": {
+        "properties": {
+            "id": {
+                "type": "keyword"
+            },
+            "title": {
+                "type": "keyword"
+            },
+            "year": {
+                "type": "keyword"
+            },
+            "runtime": {
+                "type": "keyword"
+            },
+            "genres": {
+                "type": "object"
+            },
+            "director": {
+                "type": "keyword"
+            },
+            "actors": {
+                "type": "keyword"
+            },
+            "plot": {
+                "type": "keyword"
+            },
+            "posterUrl": {
+                "type": "keyword"
+            }
+        }
+    }
+}
